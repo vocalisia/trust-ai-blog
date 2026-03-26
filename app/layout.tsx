@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image', title: 'Trustly-AI', description: 'Make Money with AI' },
   robots: { index: true, follow: true },
+  verification: {
+    other: {
+      'msvalidate.01': '542FBF2D273FC7D1C14160FFB564D4C7',
+    },
+  },
 }
 
 const jsonLd = {
@@ -33,6 +38,7 @@ const jsonLd = {
   '@type': 'Organization',
   name: 'Trustly-AI',
   legalName: 'VAULT 369 LTD',
+  taxID: '16952492',
   url: 'https://trustly-ai.com',
   logo: 'https://trustly-ai.com/og-image.jpg',
   description: 'Proven strategies to make money with AI. Newsletters, tools, side hustles, and passive income powered by artificial intelligence.',
@@ -48,7 +54,10 @@ const jsonLd = {
     email: 'contact@trustly-ai.com',
     contactType: 'customer service',
   },
-  sameAs: [],
+  sameAs: [
+    'https://www.vocalis.pro',
+    'https://www.seo-true.com',
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
