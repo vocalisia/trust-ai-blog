@@ -3,6 +3,7 @@ import './globals.css'
 import Script from 'next/script'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import CookieBanner from '@/components/layout/CookieBanner'
 
 export const metadata: Metadata = {
   title: { default: 'Trustly-AI — Make Money with Artificial Intelligence', template: '%s | Trustly-AI' },
@@ -28,9 +29,17 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Trustly-AI',
+  legalName: 'VAULT 369 LTD',
   url: 'https://trustly-ai.com',
   logo: 'https://trustly-ai.com/og-image.jpg',
   description: 'Proven strategies to make money with AI. Newsletters, tools, side hustles, and passive income powered by artificial intelligence.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '128 City Road',
+    addressLocality: 'London',
+    postalCode: 'EC1V 2NX',
+    addressCountry: 'GB',
+  },
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'contact@trustly-ai.com',
@@ -66,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   )
