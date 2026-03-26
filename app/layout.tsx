@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Trustly-AI', url: 'https://trustly-ai.com' }],
   creator: 'Trustly-AI',
   metadataBase: new URL('https://trustly-ai.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -52,7 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://trustly-ai.com" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           type="application/ld+json"
