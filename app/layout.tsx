@@ -5,14 +5,19 @@ import Footer from '@/components/layout/Footer'
 import CookieBanner from '@/components/layout/CookieBanner'
 
 export const metadata: Metadata = {
-  title: { default: 'Trustly-AI — Make Money with Artificial Intelligence', template: '%s | Trustly-AI' },
-  description: 'Proven strategies to make money with AI. Newsletters, tools, side hustles, and passive income powered by artificial intelligence.',
+  title: { default: 'Make Money with AI — Proven Strategies & Tools | Trustly-AI', template: '%s | Trustly-AI' },
+  description: 'Proven strategies to make money with AI. Newsletters, AI tools, side hustles, and passive income powered by artificial intelligence. Join 5000+ entrepreneurs.',
   keywords: ['make money with AI', 'AI side hustle', 'AI tools', 'passive income AI', 'AI newsletter'],
   authors: [{ name: 'Trustly-AI', url: 'https://trustly-ai.com' }],
   creator: 'Trustly-AI',
   metadataBase: new URL('https://trustly-ai.com'),
   alternates: {
     canonical: '/',
+    languages: {
+      'en': 'https://trustly-ai.com',
+      'fr': 'https://trustly-ai.com/fr',
+      'x-default': 'https://trustly-ai.com',
+    },
   },
   openGraph: {
     type: 'website',
@@ -21,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Trustly-AI',
     title: 'Trustly-AI — Make Money with Artificial Intelligence',
     description: 'Proven strategies to make money with AI.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Trustly-AI' }],
+    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'Trustly-AI' }],
   },
   twitter: { card: 'summary_large_image', title: 'Trustly-AI', description: 'Make Money with AI' },
   robots: { index: true, follow: true },
@@ -39,7 +44,7 @@ const jsonLd = {
   legalName: 'VAULT 369 LTD',
   taxID: '16952492',
   url: 'https://trustly-ai.com',
-  logo: 'https://trustly-ai.com/og-image.jpg',
+  logo: 'https://trustly-ai.com/og-image.svg',
   description: 'Proven strategies to make money with AI. Newsletters, tools, side hustles, and passive income powered by artificial intelligence.',
   address: {
     '@type': 'PostalAddress',
@@ -64,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script async src="https://subscribe-forms.beehiiv.com/embed.js" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HQQDGHRT2" />
         <script
           dangerouslySetInnerHTML={{
