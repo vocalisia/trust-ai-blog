@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Trust-AI',
-  description: 'Get in touch with the Trust-AI team for partnerships, questions, or feedback.',
+  title: 'Contact Trustly-AI',
+  description: 'Get in touch with the Trustly-AI team for partnerships, questions, or feedback.',
 }
 
 export default function ContactPage() {
@@ -34,7 +34,7 @@ export default function ContactPage() {
       {/* Contact form (static - mailto) */}
       <div className="card">
         <h2 className="text-xl font-bold text-foreground mb-6">Send a Message</h2>
-        <form action="mailto:contact@trust-ai.com" method="post" encType="text/plain" className="space-y-5">
+        <form action="mailto:contact@trustly-ai.com" method="post" encType="text/plain" className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className="block text-sm font-medium text-muted mb-2">Name</label>
@@ -62,7 +62,7 @@ export default function ContactPage() {
           </button>
         </form>
         <p className="text-xs text-muted/50 text-center mt-4">
-          Or email us directly at <span className="text-primary font-mono">contact@trust-ai.com</span>
+          Or email us directly at <span className="text-primary font-mono">contact@trustly-ai.com</span>
         </p>
       </div>
     </div>

@@ -2,128 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0B0D0F;
+  color: #F0F2F5;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   line-height: 1.75;
-  overflow-x: hidden;
 }
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 3px; }
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hero glow */
-.hero-glow {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120,80,255,0.3), transparent);
-}
-
-/* Pulse dot */
-.pulse-dot {
-  animation: pulse-dot 2s infinite;
-}
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-/* Floating animation */
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Shine button */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -75%;
-  width: 50%;
-  height: 200%;
-  background: rgba(255,255,255,0.15);
-  transform: skewX(-25deg);
-  animation: shine 3s infinite;
-}
-@keyframes shine {
-  0% { left: -75%; }
-  100% { left: 150%; }
-}
-
-/* Ticker */
-.ticker {
-  animation: ticker 30s linear infinite;
-}
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Card hover glow */
-.card-glow {
-  transition: all 0.3s ease;
-}
-.card-glow:hover {
-  box-shadow: 0 0 30px rgba(139,92,246,0.3);
-  transform: translateY(-4px);
-}
-
-/* Grid background */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 50px 50px;
-}
-
-/* Article prose */
-.prose h2 { @apply text-2xl font-bold mt-10 mb-4 text-white border-l-4 border-purple-500 pl-4; }
-.prose h3 { @apply text-xl font-semibold mt-8 mb-3 text-blue-400; }
-.prose p  { @apply mb-5 text-gray-400 leading-relaxed; }
-.prose ul { @apply list-none mb-5 space-y-2; }
-.prose ul li::before { content: "▸ "; color: #a855f7; }
-.prose ol { @apply list-decimal list-inside mb-5 space-y-2 text-gray-400; }
-.prose blockquote { @apply border-l-4 border-purple-500 pl-5 italic text-gray-400 my-6 bg-white/5 rounded-r-lg py-3; }
-.prose table { @apply w-full border-collapse mb-6 text-sm; }
-.prose th { @apply bg-white/5 text-purple-400 font-semibold p-3 text-left border border-white/10; }
-.prose td { @apply p-3 border border-white/10 text-gray-400; }
-.prose strong { @apply text-white font-semibold; }
-.prose a  { @apply text-blue-400 hover:text-purple-400 underline transition-colors; }
-.prose code { @apply bg-white/5 text-blue-300 px-2 py-0.5 rounded text-sm font-mono border border-white/10; }
-.prose pre { @apply bg-white/5 border border-white/10 rounded-xl p-4 overflow-x-auto mb-5; }
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white font-bold px-6 py-3 rounded-xl transition-all duration-200 inline-block;
+    @apply bg-primary hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-block;
   }
   .btn-secondary {
-    @apply bg-transparent border border-white/20 text-white hover:bg-white/5 font-semibold px-6 py-3 rounded-xl transition-all duration-200 inline-block;
+    @apply bg-surface-2 border border-primary/30 hover:border-primary text-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-block;
   }
   .card {
-    @apply bg-white/5 border border-white/10 rounded-xl p-6 hover:border-purple-500/30 transition-all duration-200;
+    @apply bg-surface border border-surface-2 rounded-xl p-6 hover:border-primary/50 transition-all duration-200;
   }
-  .tag {
-    @apply text-xs font-mono font-semibold px-3 py-1 rounded-full border;
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 }
+
+.prose h2 { @apply text-2xl font-bold mt-8 mb-4 text-foreground; }
+.prose h3 { @apply text-xl font-semibold mt-6 mb-3 text-foreground; }
+.prose p { @apply mb-4 text-gray-300 leading-relaxed; }
+.prose ul { @apply list-disc list-inside mb-4 space-y-2 text-gray-300; }
+.prose ol { @apply list-decimal list-inside mb-4 space-y-2 text-gray-300; }
+.prose blockquote { @apply border-l-4 border-primary pl-4 italic text-muted my-6; }
+.prose table { @apply w-full border-collapse mb-6; }
+.prose th { @apply bg-surface-2 text-foreground font-semibold p-3 text-left border border-surface-2; }
+.prose td { @apply p-3 border border-surface-2 text-gray-300; }
+.prose strong { @apply text-foreground font-semibold; }
+.prose a { @apply text-primary hover:text-secondary transition-colors; }
+.prose code { @apply bg-surface text-primary px-2 py-0.5 rounded text-sm font-mono; }

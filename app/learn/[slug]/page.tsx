@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import LessonNav from '@/components/learn/LessonNav'
 
 const lessons: Record<string, { title: string; time: string; level: string; color: string; content: string }> = {
   'what-is-ai-income': {
@@ -1027,22 +1028,12 @@ export default function LessonPage({ params }: Props) {
       </div>
 
       {/* Navigation */}
-      <div className="flex justify-between mt-16 gap-4">
-        {prevSlug ? (
-          <Link href={`/learn/${prevSlug}`}
-            className="flex-1 border border-white/10 rounded-xl p-4 hover:border-white/30 transition-colors text-left">
-            <span className="text-gray-500 text-xs font-mono block mb-1">← Previous</span>
-            <span className="text-white text-sm font-medium">{lessons[prevSlug].title.slice(0, 40)}...</span>
-          </Link>
-        ) : <div />}
-        {nextSlug ? (
-          <Link href={`/learn/${nextSlug}`}
-            className="flex-1 border border-white/10 rounded-xl p-4 hover:border-white/30 transition-colors text-right">
-            <span className="text-gray-500 text-xs font-mono block mb-1">Next →</span>
-            <span className="text-white text-sm font-medium">{lessons[nextSlug].title.slice(0, 40)}...</span>
-          </Link>
-        ) : <div />}
-      </div>
+      <LessonNav
+        prev={prevSlug ? { slug: prevSlug, title: lessons[prevSlug].title } : null}
+        next={nextSlug ? { slug: nextSlug, title: lessons[nextSlug].title } : null}
+        currentIndex={currentIndex}
+        total={allSlugs.length}
+      />
 
       {/* CTA */}
       <div className="mt-12 rounded-2xl border border-purple-500/30 bg-purple-500/5 text-center py-10 px-6">

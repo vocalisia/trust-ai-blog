@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Thank You — Trust-AI' }
+export const metadata: Metadata = { title: 'Thank You — Trustly-AI' }
 
 export default function ThankYouPage() {
   return (
@@ -11,7 +11,7 @@ export default function ThankYouPage() {
         Thank You for Your Purchase!
       </h1>
       <p className="text-muted text-lg mb-8">
-        You will receive an email shortly with access to your content. Welcome to the Trust-AI community!
+        You will receive an email shortly with access to your content. Welcome to the Trustly-AI community!
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Link href="/learn" className="btn-primary">Start Learning Now</Link>
