@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: 'Trustly-AI', description: 'Make Money with AI' },
   robots: { index: true, follow: true },
   verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
     other: {
       'msvalidate.01': '542FBF2D273FC7D1C14160FFB564D4C7',
     },
@@ -69,15 +70,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              var _c = (typeof localStorage !== 'undefined') ? localStorage.getItem('cookie-consent') : null;
+              gtag('consent', 'default', { analytics_storage: _c === 'rejected' ? 'denied' : 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+            `,
+          }}
+        />
         <script async src="https://subscribe-forms.beehiiv.com/embed.js" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HQQDGHRT2" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-7HQQDGHRT2');
+              gtag('config', 'G-D3XG48MBSM');
             `,
           }}
         />
