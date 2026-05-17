@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -61,7 +62,11 @@ const jsonLd = {
   },
   sameAs: [
     'https://www.vocalis.pro',
+    'https://www.vocalis.blog',
     'https://www.seo-true.com',
+    'https://www.master-seller.fr',
+    'https://www.tesla-mag.ch',
+    'https://www.iapmesuisse.ch',
   ],
 }
 
@@ -71,33 +76,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              var _c = (typeof localStorage !== 'undefined') ? localStorage.getItem('cookie-consent') : null;
-              gtag('consent', 'default', { analytics_storage: _c === 'rejected' ? 'denied' : 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
-            `,
-          }}
-        />
-        <script async src="https://subscribe-forms.beehiiv.com/embed.js" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-D3XG48MBSM');
-            `,
-          }}
-        />
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="bg-background text-foreground min-h-screen flex flex-col">
+        <Script id="gtag-consent-default" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            var _c = (typeof localStorage !== 'undefined') ? localStorage.getItem('cookie-consent') : null;
+            gtag('consent', 'default', { analytics_storage: _c === 'accepted' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+          `}
+        </Script>
+        <Script src="https://subscribe-forms.beehiiv.com/embed.js" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM" strategy="afterInteractive" />
+        <Script id="gtag-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D3XG48MBSM');
+          `}
+        </Script>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
