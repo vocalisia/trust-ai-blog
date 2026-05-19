@@ -81,23 +81,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-background text-foreground min-h-screen flex flex-col">
-        <Script id="gtag-consent-default" strategy="afterInteractive">
+        <Script id="gtag-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
             var _c = (typeof localStorage !== 'undefined') ? localStorage.getItem('cookie-consent') : null;
-            gtag('consent', 'default', { analytics_storage: _c === 'accepted' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+            if (_c === 'accepted') { gtag('consent', 'update', { analytics_storage: 'granted' }); }
+            (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM';document.head.appendChild(s);})();
           `}
         </Script>
         <Script src="https://subscribe-forms.beehiiv.com/embed.js" strategy="afterInteractive" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM" strategy="afterInteractive" />
         <Script id="gtag-config" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-D3XG48MBSM');
-          `}
+          {`gtag('js', new Date()); gtag('config', 'G-D3XG48MBSM');`}
         </Script>
         <Header />
         <main className="flex-1">{children}</main>
