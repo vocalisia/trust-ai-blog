@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer'
 import CookieBanner from '@/components/layout/CookieBanner'
 
 export const metadata: Metadata = {
-  title: { default: 'Make Money with AI — Proven Strategies & Tools | Trustly-AI', template: '%s | Trustly-AI' },
+  title: { default: 'Trustly AI — Make Money with AI: Strategies & Tools 2026', template: '%s | Trustly-AI' },
   description: 'Proven strategies to make money with AI. Newsletters, AI tools, side hustles, and passive income powered by artificial intelligence. Join 5000+ entrepreneurs.',
   keywords: ['make money with AI', 'AI side hustle', 'AI tools', 'passive income AI', 'AI newsletter'],
   authors: [{ name: 'Trustly-AI', url: 'https://trustly-ai.com' }],

@@ -1,7 +1,25 @@
 {
-  "buildCommand": "next build",
+  "buildCommand": "npm run build",
   "outputDirectory": "out",
   "framework": null,
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.trustly-ai.com" }],
+      "destination": "https://trustly-ai.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sell-ai-prompts-online-2026",
+      "destination": "/blog/best-practices-selling-ai-prompt-packs-gumroad-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sell-ai-prompts-online-2026/",
+      "destination": "/blog/best-practices-selling-ai-prompt-packs-gumroad-2026/",
+      "permanent": true
+    }
+  ]
 }
