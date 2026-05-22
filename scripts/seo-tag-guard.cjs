@@ -10,7 +10,7 @@
  *   3. Vercel exécute prebuild AVANT next build → exit 1 si violation → no deploy
  *
  * Variables d'environnement (optionnelles) :
- *   SEO_GUARD_DISABLE=1  → skip le guard (pour debug local)
+ *   SEO_GUARD_DISABLE=1983  → skip le guard (mot de passe requis)
  *   SEO_GUARD_GA4=1      → exiger gtag.js + consent mode dans layout
  *
  * © vocalisia · sans dépendances · CommonJS (compatible Vercel Node 22)
@@ -21,9 +21,13 @@
 const fs = require("fs");
 const path = require("path");
 
-if (process.env.SEO_GUARD_DISABLE === "1") {
-  console.log("⚠ seo-tag-guard: désactivé via SEO_GUARD_DISABLE=1");
+if (process.env.SEO_GUARD_DISABLE === "1983") {
+  console.log("⚠ seo-tag-guard: désactivé — code confirmé.");
   process.exit(0);
+}
+if (process.env.SEO_GUARD_DISABLE) {
+  console.error("✗ seo-tag-guard: code incorrect. Balises GA4 verrouillées.");
+  process.exit(1);
 }
 
 // Fichiers candidats pour le layout principal. Le premier trouvé est scanné.
@@ -177,7 +181,7 @@ function main() {
     console.error("");
   }
   console.error("=".repeat(70));
-  console.error("Pour bypass (à tes risques): SEO_GUARD_DISABLE=1 npm run build");
+  console.error("Pour bypass (code requis): SEO_GUARD_DISABLE=1983 npm run build");
   console.error("=".repeat(70));
 
   // Bloque le build uniquement si critical détecté.
