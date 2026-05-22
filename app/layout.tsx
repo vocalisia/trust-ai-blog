@@ -89,12 +89,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
             var _c = (typeof localStorage !== 'undefined') ? localStorage.getItem('cookie-consent') : null;
             if (_c === 'rejected') { gtag('consent', 'update', { analytics_storage: 'denied' }); }
-            (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM';document.head.appendChild(s);})();
+            (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-GP0YDMC03S';document.head.appendChild(s);})();
           `}
         </Script>
         <Script src="https://subscribe-forms.beehiiv.com/embed.js" strategy="afterInteractive" />
         <Script id="gtag-config" strategy="afterInteractive">
-          {`gtag('js', new Date()); gtag('config', 'G-D3XG48MBSM');`}
+          {`gtag('js', new Date()); gtag('config', 'G-GP0YDMC03S');`}
         </Script>
         <Header />
         <main className="flex-1">{children}</main>
