@@ -86,9 +86,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
-            gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+            gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
             var _c = (typeof localStorage !== 'undefined') ? localStorage.getItem('cookie-consent') : null;
-            if (_c === 'accepted') { gtag('consent', 'update', { analytics_storage: 'granted' }); }
+            if (_c === 'rejected') { gtag('consent', 'update', { analytics_storage: 'denied' }); }
             (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-D3XG48MBSM';document.head.appendChild(s);})();
           `}
         </Script>
