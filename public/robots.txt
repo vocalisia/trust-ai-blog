@@ -3,7 +3,6 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /dashboard/
-Disallow: /_next/
 
 User-agent: GPTBot
 Allow: /
