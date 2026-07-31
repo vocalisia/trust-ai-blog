@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     '', '/blog', '/learn', '/pricing', '/about', '/contact',
-    '/privacy-policy', '/terms', '/refund', '/thank-you',
+    '/privacy-policy', '/terms', '/refund',
   ].map(path => ({
     url: `${BASE_URL}${path}/`,
     lastModified: lastDeploy,

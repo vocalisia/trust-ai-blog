@@ -165,6 +165,36 @@
       "source": "/blog/ai-voice-cloning-business",
       "destination": "/blog/how-to-make-money-with-ai-in-2025/",
       "permanent": true
+    },
+    {
+      "source": "/blog/ai-freelancing-skills",
+      "destination": "/learn/freelancing-with-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-freelancing-skills/",
+      "destination": "/learn/freelancing-with-ai/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/make-money-chatgpt-2025",
+      "destination": "/blog/how-to-make-money-with-ai-in-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/make-money-chatgpt-2025/",
+      "destination": "/blog/how-to-make-money-with-ai-in-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/automate-social-media-ai",
+      "destination": "/learn/ai-content-strategy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/automate-social-media-ai/",
+      "destination": "/learn/ai-content-strategy/",
+      "permanent": true
     }
   ]
 }
