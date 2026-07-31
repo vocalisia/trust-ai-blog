@@ -5,17 +5,26 @@ import Link from 'next/link'
 import { newsArticles, getNewsBySlug } from '@/data/news'
 
 export function generateStaticParams() {
-  return newsArticles.map((a) => ({ slug: a.slug }))
+  // Next 14's static exporter rejects an empty dynamic-route parameter list.
+  // The sentinel is rendered through notFound() below, so it never becomes a
+  // public article or an indexable URL when the news feed is empty.
+  return newsArticles.length > 0
+    ? newsArticles.map((a) => ({ slug: a.slug }))
+    : [{ slug: '__no-news__' }]
 }
+
+// This site is a static export. Unknown news URLs must be a real 404 rather
+// than a dynamic route that cannot be emitted by the export build.
+export const dynamicParams = false
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params
+export function generateMetadata({ params }: PageProps): Metadata {
+  const { slug } = params
   const a = getNewsBySlug(slug)
-  if (!a) return { title: 'Article introuvable' }
+  if (!a) return { title: 'Article introuvable', robots: { index: false, follow: false } }
   return {
     title: a.title,
     description: a.excerpt,
@@ -23,8 +32,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function NewsArticlePage({ params }: PageProps) {
-  const { slug } = await params
+export default function NewsArticlePage({ params }: PageProps) {
+  const { slug } = params
   const a = getNewsBySlug(slug)
   if (!a) notFound()
 
