@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contact Trustly-AI',
   description: 'Get in touch with the Trustly-AI team for partnerships, questions, or feedback.',
+  alternates: { canonical: '/contact/' },
 }
 
 export default function ContactPage() {

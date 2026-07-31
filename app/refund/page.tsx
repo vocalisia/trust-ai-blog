@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Refund Policy',
   description: 'Refund Policy for Trustly-AI. 30-day money-back guarantee on all products.',
+  alternates: { canonical: '/refund/' },
 }
 
 export default function RefundPage() {

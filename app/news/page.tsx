@@ -6,6 +6,7 @@ import { getLatestNews } from '@/data/news'
 export const metadata: Metadata = {
   title: 'News & Actualités',
   description: 'Dernières analyses, guides et actualités.',
+  alternates: { canonical: '/news/' },
 }
 
 export const dynamic = 'force-static'

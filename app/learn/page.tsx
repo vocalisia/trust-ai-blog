@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Learn AI — Free Guides & Tutorials',
   description: 'Free step-by-step guides to learn AI tools, build automations, and start earning money with artificial intelligence.',
+  alternates: { canonical: '/learn/' },
 }
 
 const modules = [

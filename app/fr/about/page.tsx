@@ -7,6 +7,7 @@ const locale = 'fr'
 export const metadata: Metadata = {
   title: 'À propos de Trustly-AI',
   description: 'Découvrez Trustly-AI — qui nous sommes, notre mission, et pourquoi nous avons créé la meilleure ressource pour gagner de l\'argent avec l\'intelligence artificielle.',
+  alternates: { canonical: '/fr/about/' },
 }
 
 export default function AboutPageFr() {

@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'All Articles — Trustly-AI',
   description: 'Browse all articles about making money with AI, AI tools, side hustles, and passive income.',
+  alternates: { canonical: '/blog/' },
 }
 
 export default function BlogPage() {

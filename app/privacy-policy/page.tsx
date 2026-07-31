@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy Policy for Trustly-AI. Learn how we collect, use, and protect your personal data.',
+  alternates: { canonical: '/privacy-policy/' },
 }
 
 export default function PrivacyPolicyPage() {

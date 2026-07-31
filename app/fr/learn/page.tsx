@@ -7,6 +7,7 @@ const locale = 'fr'
 export const metadata: Metadata = {
   title: 'Apprendre l\'IA — Guides & Tutoriels Gratuits',
   description: 'Des guides gratuits pas à pas pour apprendre les outils IA, créer des automatisations et commencer à gagner de l\'argent avec l\'intelligence artificielle.',
+  alternates: { canonical: '/fr/learn/' },
 }
 
 const modules = [

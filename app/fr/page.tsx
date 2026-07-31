@@ -1,9 +1,16 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { getAllArticles, CATEGORIES } from '@/lib/mdx'
 import ArticleCard from '@/components/blog/ArticleCard'
 import { t } from '@/lib/i18n'
 
 const locale = 'fr'
+
+export const metadata: Metadata = {
+  title: 'Trustly-AI — Gagner de l’argent avec l’IA',
+  description: 'Guides, outils et stratégies concrètes pour créer des revenus avec l’intelligence artificielle.',
+  alternates: { canonical: '/fr/' },
+}
 
 export default function HomePageFr() {
   const articles = getAllArticles()

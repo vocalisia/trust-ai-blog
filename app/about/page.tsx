@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Trustly-AI',
   description: 'Learn about Trustly-AI — who we are, our mission, and why we built a top resource for making money with artificial intelligence.',
+  alternates: { canonical: '/about/' },
 }
 
 export default function AboutPage() {

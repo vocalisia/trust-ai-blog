@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Thank You — Trustly-AI' }
+export const metadata: Metadata = {
+  title: 'Thank You — Trustly-AI',
+  alternates: { canonical: '/thank-you/' },
+  robots: { index: false, follow: false },
+}
 
 export default function ThankYouPage() {
   return (

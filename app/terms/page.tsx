@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for Trustly-AI. Read our terms and conditions before using our platform.',
+  alternates: { canonical: '/terms/' },
 }
 
 export default function TermsPage() {

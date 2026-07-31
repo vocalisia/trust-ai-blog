@@ -6,6 +6,7 @@ const locale = 'fr'
 export const metadata: Metadata = {
   title: 'Contact Trustly-AI',
   description: 'Contactez l\'équipe Trustly-AI pour des partenariats, questions ou retours.',
+  alternates: { canonical: '/fr/contact/' },
 }
 
 export default function ContactPageFr() {
