@@ -97,6 +97,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/ai-voice-cloning-business/",
+      "destination": "/blog/how-to-make-money-with-ai-in-2025/",
+      "permanent": true
+    },
+    {
       "source": "/blog/ai-content-studio-workflow-2026/",
       "destination": "/learn/ai-content-strategy/",
       "permanent": true
@@ -154,6 +159,11 @@
     {
       "source": "/blog/ai-agents-vs-automation/",
       "destination": "/learn/build-ai-agent/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ai-voice-cloning-business",
+      "destination": "/blog/how-to-make-money-with-ai-in-2025/",
       "permanent": true
     }
   ]
