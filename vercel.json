@@ -195,6 +195,26 @@
       "source": "/blog/automate-social-media-ai/",
       "destination": "/learn/ai-content-strategy/",
       "permanent": true
+    },
+    {
+      "source": "/blog/transformer-workflow-ia-produit-numerique",
+      "destination": "/blog/how-to-sell-ai-prompt-packs-on-gumroad-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/transformer-workflow-ia-produit-numerique/",
+      "destination": "/blog/how-to-sell-ai-prompt-packs-on-gumroad-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vendre-prompt-packs-utiles-sans-promesse",
+      "destination": "/blog/how-to-sell-ai-prompt-packs-on-gumroad-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vendre-prompt-packs-utiles-sans-promesse/",
+      "destination": "/blog/how-to-sell-ai-prompt-packs-on-gumroad-2026/",
+      "permanent": true
     }
   ]
 }
